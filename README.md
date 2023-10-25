@@ -14,6 +14,8 @@ cool app to vote on which character is better
 A fun app to vote on your character bias
 
 
+ljasdlfjlskdjf
+
 ## Table of Contents
 - [Important URLs](#urls)
 - [Contributors](#contributors)
