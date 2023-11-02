@@ -1,13 +1,8 @@
 const { Schema, model } = require('mongoose');
 
 const matchupSchema = new Schema({
-  matchupText: {
-    type: String,
-    required: 'You need to leave a matchup!',
-    minlength: 1,
-    maxlength: 280,
-    trim: true,
-  },
+  characterA:{},
+  characterB:{},
   matchupAuthor: {
     type: String,
     required: true,
@@ -17,6 +12,14 @@ const matchupSchema = new Schema({
     type: Date,
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
+  },
+  endingAt: {
+    type:Date,
+    default: Date.now +7
+  },
+  privateMatchup:{
+    type:Boolean,
+    default: false
   },
   comments: [
     {
