@@ -1,9 +1,22 @@
 const { Schema, model } = require('mongoose');
 
 const characterSchema = new Schema({
-  name:{},
-  characterB:{},
-  characterAuthor: {
+  name:{
+    type:String,
+    required: true,
+    trim: true,
+  },
+  bio:{
+    type:String,
+    required: true, 
+    trim: true,
+  },
+  modifier:{
+    type:String,
+    required: true, 
+    trim: true,
+  },
+  origin: {
     type: String,
     required: true,
     trim: true,
@@ -13,14 +26,7 @@ const characterSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  endingAt: {
-    type:Date,
-    default: Date.now +7
-  },
-  privateCharacter:{
-    type:Boolean,
-    default: false
-  },
+  totalMatchups:{},
   comments: [
     {
       commentText: {
