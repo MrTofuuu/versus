@@ -5,6 +5,7 @@ const characterSchema = new Schema({
     type:String,
     required: true,
     trim: true,
+    unique: true
   },
   bio:{
     type:String,
