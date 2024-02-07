@@ -48,7 +48,7 @@ coming soon
 ```
 
 ## Mock-Up
-
+![Homepage](./assets/homepage.png)
 
 ## Packages
 
