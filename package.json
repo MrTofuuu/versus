@@ -2,11 +2,19 @@
   "name": "versus",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server --ignore client",
+    "start:dev": "concurrently \"cd server && pnpm run start\" \"cd client && pnpm run dev\"",
+    "install": "cd server && pnpm i && cd ../client && pnpm i",
+    "seed": "cd server && pnpm run seed",
+    "build": "cd client && pnpm run build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
