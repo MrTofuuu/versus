@@ -6,39 +6,60 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    matchups: [Matchup]!
+    # matchups: [Matchup]!
   }
 
-  type Matchup {
-    _id: ID
-    matchupText: String
-    matchupAuthor: String
-    createdAt: String
-    comments: [Comment]!
-  }
+  # type Matchup {
+  #   _id: ID
+  #   matchupText: String
+  #   matchupAuthor: String
+  #   createdAt: String
+  #   characters:[Character]
+  #   comments: [Comment]!
+  # }
 
-  type Comment {
-    _id: ID
-    commentText: String
-    commentAuthor: String
-    createdAt: String
-  }
+  type Character{
+    _id:ID
+    name: String
+    bio: String
 
-  type Auth {
-    token: ID!
-    user: User
   }
+  # type Comment {
+  #   _id: ID
+  #   commentText: String
+  #   commentAuthor: String
+  #   createdAt: String
+  # }
+
+  # type Auth {
+  #   token: ID!
+  #   user: User
+  # }
 
   type Query {
     users: [User]
     user(username: String!): User
-    matchups(username: String): [Thought]
-    matchup(matchupId: ID!): Thought
+    characters: [Character]
+    character: Character
+    # matchups(username: String): [Character]
+    # matchup(matchupId: ID!): Character
   }
 
-  type Mutation {
-    
-  }
+  # type Mutation {
+  #   addUser(
+  #     username: String!
+  #     email: String!
+  #     password: String!
+  #   ): Auth
+  #   addMatchup(characters: [ID]!): Matchup
+  #   updateUser(
+  #     username: String
+  #     email: String
+  #     password: String
+  #   ): User
+  #   # updateCharacter(_id: ID!, quantity: Int!): Character
+  #   login(email: String!, password: String!): Auth
+  # }
 `;
 
 module.exports = typeDefs;
